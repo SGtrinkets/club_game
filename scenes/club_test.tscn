@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt2bjkx2yp3c0"]
+[gd_scene load_steps=11 format=3 uid="uid://dt2bjkx2yp3c0"]
 
 [ext_resource type="Script" uid="uid://ck4es2rlehpqi" path="res://scripts/level_1.gd" id="1_chtx1"]
 [ext_resource type="Material" uid="uid://c35d3dijqhy4y" path="res://materials/reflective_black_test.tres" id="1_fm3h1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://butukwdv5kudj" path="res://materials/purple_glow.tres" id="4_ka55b"]
 [ext_resource type="PackedScene" uid="uid://cjpjevpjdis36" path="res://scenes/laser.tscn" id="5_ka55b"]
 [ext_resource type="AudioStream" uid="uid://dx3a7yrqlc3hn" path="res://songs/level_1/Culture Code ft. Brenton Mattheus - On My Own.wav" id="6_nb788"]
+[ext_resource type="PackedScene" uid="uid://dc8wfy21y161b" path="res://scenes/spotlight.tscn" id="8_3xqq5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chtx1"]
 albedo_color = Color(0.165656, 0.165656, 0.165656, 1)
@@ -165,7 +166,6 @@ spot_angle = 71.7188
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.22434, 5.31509)
-visible = false
 light_energy = 3.232
 light_indirect_energy = 6.98
 omni_range = 23.335
@@ -185,11 +185,14 @@ stream = ExtResource("6_nb788")
 [node name="player" parent="." instance=ExtResource("2_w647x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32935, 0)
 
-[node name="Skeleton3D" parent="player/head/Pistol" index="0"]
-transform = Transform3D(-1, 6.18173e-08, 6.18173e-08, 0, 0.707107, -0.707107, -8.74228e-08, -0.707107, -0.707107, 0, 0, 0.375)
-bones/2/position = Vector3(-0.0538376, 0.105343, -0.231776)
-bones/27/position = Vector3(0.118042, -0.0240156, -0.0350822)
+[node name="Spotlight" parent="." instance=ExtResource("8_3xqq5")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.728927, 5.02306, -23.7963)
+
+[node name="SpotLight3D" parent="Spotlight/SpotlightHolder/Spotlight" index="0"]
+spot_range = 6.56672
+spot_angle = 16.2566
 
 [editable path="player"]
 [editable path="player/head/Camera3D/song_title_screen"]
 [editable path="player/head/Pistol"]
+[editable path="Spotlight"]
