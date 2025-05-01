@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx3a7yrqlc3hn"
+path="res://.godot/imported/Culture Code ft. Brenton Mattheus - On My Own.wav-ba4e8946ad313bf4a9643d6c96ad8ab3.sample"
+
+[deps]
+
+source_file="res://songs/level_1/Culture Code ft. Brenton Mattheus - On My Own.wav"
+dest_files=["res://.godot/imported/Culture Code ft. Brenton Mattheus - On My Own.wav-ba4e8946ad313bf4a9643d6c96ad8ab3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

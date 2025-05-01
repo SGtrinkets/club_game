@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhvwh6n4yvleb"
+path="res://.godot/imported/Toxic Joy - Temptation (ft. NEIV) [Arcade Release].wav-51c31e8e9154b3fb04c14cc80812463a.sample"
+
+[deps]
+
+source_file="res://songs/level_2/Toxic Joy - Temptation (ft. NEIV) [Arcade Release].wav"
+dest_files=["res://.godot/imported/Toxic Joy - Temptation (ft. NEIV) [Arcade Release].wav-51c31e8e9154b3fb04c14cc80812463a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

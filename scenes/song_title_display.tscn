@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://ifo2h3o1tlxx"]
+
+[ext_resource type="FontFile" uid="uid://drmd3mnkh8vwj" path="res://fonts/Kabel-Black.ttf" id="1_io4t7"]
+
+[sub_resource type="Theme" id="Theme_h07mp"]
+
+[sub_resource type="Animation" id="Animation_io4t7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h07mp"]
+resource_name = "title_fade_in_and_out"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.06667, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ceqq0"]
+_data = {
+&"RESET": SubResource("Animation_io4t7"),
+&"title_fade_in_and_out": SubResource("Animation_h07mp")
+}
+
+[node name="song_title_screen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -26.0
+offset_right = 12.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -119.0
+offset_right = 261.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_h07mp")
+theme_override_constants/separation = 9
+metadata/_edit_use_anchors_ = true
+
+[node name="artist" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_io4t7")
+theme_override_font_sizes/font_size = 31
+text = "Max Brhon"
+
+[node name="song_name" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_io4t7")
+theme_override_font_sizes/font_size = 31
+text = "\"Cyberpunk\""
+
+[node name="album" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_io4t7")
+theme_override_font_sizes/font_size = 31
+text = "Top 50 NCS"
+
+[node name="brand" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_io4t7")
+theme_override_font_sizes/font_size = 31
+text = "NoCopyrightSounds"
+
+[node name="song_title_animation_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ceqq0")
+}

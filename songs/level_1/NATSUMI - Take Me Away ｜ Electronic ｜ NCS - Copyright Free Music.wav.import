@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://g0yv43cvcchh"
+path="res://.godot/imported/NATSUMI - Take Me Away ｜ Electronic ｜ NCS - Copyright Free Music.wav-f4282b1d23810f20bdf9763c49cb4530.sample"
+
+[deps]
+
+source_file="res://songs/level_1/NATSUMI - Take Me Away ｜ Electronic ｜ NCS - Copyright Free Music.wav"
+dest_files=["res://.godot/imported/NATSUMI - Take Me Away ｜ Electronic ｜ NCS - Copyright Free Music.wav-f4282b1d23810f20bdf9763c49cb4530.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

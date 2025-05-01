@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://dup1ex7vfupg1"]
+
+[ext_resource type="Script" uid="uid://c135djtnba1ic" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://bbui3g52q1bmg" path="res://scenes/editable_pistol.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://ifo2h3o1tlxx" path="res://scenes/song_title_display.tscn" id="2_qhqgy"]
+[ext_resource type="FontFile" uid="uid://bxm1yap574brq" path="res://fonts/Roboto-Medium.ttf" id="3_smehm"]
+[ext_resource type="AudioStream" uid="uid://b2l47n3bqd5m4" path="res://sounds/gun/pistol/pistol_gunshot.wav" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://khecjq480xlr" path="res://scripts/player_state_machine.gd" id="5_tuyoq"]
+[ext_resource type="AnimationLibrary" uid="uid://cn64mt66l8g1s" path="res://models/props/gun_animations/pistol_animations/gun_animation_library.res" id="5_ur7pv"]
+[ext_resource type="Script" uid="uid://b28cbewr5puy8" path="res://scripts/idle_state.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://bcyodog633mu7" path="res://scripts/walk_state.gd" id="7_fjrip"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_3vyb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qhqgy")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35898, 0)
+
+[node name="song_title_screen" parent="head/Camera3D" instance=ExtResource("2_qhqgy")]
+
+[node name="Control" type="Control" parent="head/Camera3D"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -69.0
+offset_right = 20.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="head/Camera3D/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+use_top_left = true
+
+[node name="subtitles" type="Label" parent="head/Camera3D/Control/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_smehm")
+theme_override_font_sizes/font_size = 27
+horizontal_alignment = 1
+
+[node name="Pistol" parent="head" instance=ExtResource("2_g2els")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, -0.25, -0.089)
+
+[node name="Skeleton3D" parent="head/Pistol" index="0"]
+transform = Transform3D(-1, 6.18173e-08, 6.18173e-08, 0, 0.707107, -0.707107, -8.74228e-08, -0.707107, -0.707107, 0, 0, 0.375)
+bones/2/position = Vector3(-0.0538376, 0.105343, -0.231776)
+bones/2/rotation = Quaternion(0.568294, 0.630358, -0.421665, -0.319203)
+bones/3/rotation = Quaternion(0.494503, -0.362448, 0.0155992, 0.789845)
+bones/4/rotation = Quaternion(0.594711, -0.0176256, -0.0253687, 0.803346)
+bones/5/rotation = Quaternion(-7.85429e-09, -6.52888e-08, 0.316477, 0.9486)
+bones/6/rotation = Quaternion(-0.277754, 0.274211, 0.221088, 0.893746)
+bones/7/rotation = Quaternion(-0.404073, 0.0585492, 0.832242, -0.375059)
+bones/8/rotation = Quaternion(1.64161e-07, -0.0549503, 8.95418e-08, 0.998489)
+bones/9/rotation = Quaternion(3.85398e-09, -0.256289, -2.89049e-09, 0.9666)
+bones/10/rotation = Quaternion(0.201359, -0.00946764, -0.698973, 0.68615)
+bones/11/rotation = Quaternion(0.348782, -0.0062356, 0.00415692, 0.937174)
+bones/12/rotation = Quaternion(0.299803, -0.0104909, 0.00232739, 0.953941)
+bones/14/rotation = Quaternion(0.481754, -2.05117e-07, 1.11592e-07, 0.876307)
+bones/15/rotation = Quaternion(0.568562, 7.47194e-08, 2.468e-07, 0.82264)
+bones/16/rotation = Quaternion(0.133379, -0.262444, -0.636424, 0.712951)
+bones/17/position = Vector3(-0.00061142, 0.00237829, 0.0451568)
+bones/17/rotation = Quaternion(0.600421, -1.36259e-07, -3.40067e-07, 0.799684)
+bones/18/rotation = Quaternion(0.338738, -6.13697e-08, 3.84058e-07, 0.940881)
+bones/20/rotation = Quaternion(0.062791, 8.58511e-08, 4.7358e-08, 0.998027)
+bones/21/rotation = Quaternion(0.460975, 1.86807e-07, 4.82757e-08, 0.887413)
+bones/22/position = Vector3(-0.0501148, -0.0345795, 0.103695)
+bones/22/rotation = Quaternion(-0.231689, -0.018064, 0.969545, -0.0773062)
+bones/23/position = Vector3(-8.58307e-07, -0.0179234, -0.00483704)
+bones/23/rotation = Quaternion(0.140901, 1.01821e-06, -7.08987e-07, 0.990024)
+bones/24/position = Vector3(-1.90735e-07, 0.0612095, -0.00173861)
+bones/24/rotation = Quaternion(-0.140901, 4.24644e-08, 3.83563e-08, 0.990024)
+bones/25/position = Vector3(-7.43866e-07, 0.0549175, 0.0294321)
+bones/26/position = Vector3(0, -0.0195839, -0.0578759)
+bones/26/rotation = Quaternion(-0.368125, -6.70959e-08, -3.79051e-08, 0.929776)
+bones/27/position = Vector3(0.118042, -0.0240156, -0.0350822)
+bones/27/rotation = Quaternion(-0.568, 0.63, -0.422, 0.319)
+bones/28/rotation = Quaternion(0.45475, 0.839404, 0.0942665, 0.282344)
+bones/29/rotation = Quaternion(0.312968, 0.217388, 0.22202, 0.897497)
+bones/30/position = Vector3(-0.0105585, -0.00409821, 0.216019)
+bones/30/rotation = Quaternion(-0.0363223, -0.197598, -0.517084, 0.832022)
+bones/32/rotation = Quaternion(-0.00764969, -0.225794, 0.00177352, 0.974143)
+bones/33/rotation = Quaternion(-0.00783021, 0.0784567, -0.000617208, 0.996887)
+bones/34/position = Vector3(0.017753, -0.0266098, 0.113457)
+bones/34/rotation = Quaternion(0.298575, 0.320285, 0.732266, 0.521591)
+bones/35/position = Vector3(-0.00251381, 0.00105281, 0.0398449)
+bones/35/rotation = Quaternion(0.217713, 0.00674663, -0.00326651, 0.975984)
+bones/36/rotation = Quaternion(0.333923, 0.0103992, -0.00270402, 0.942539)
+bones/36/scale = Vector3(1, 1, 1)
+bones/37/position = Vector3(0.0138163, -0.00292984, 0.10584)
+bones/38/position = Vector3(-2.30789e-06, 0.00186819, 0.0393566)
+bones/38/rotation = Quaternion(0.290897, 7.32985e-07, 5.29539e-07, 0.956755)
+bones/39/rotation = Quaternion(0.290895, 1.25765e-06, -2.80732e-06, 0.956755)
+bones/39/scale = Vector3(1.00001, 1.00001, 1)
+bones/40/position = Vector3(0.0164946, 0.0230479, 0.0936617)
+bones/41/rotation = Quaternion(0.335646, 5.00663e-06, -1.29714e-06, 0.941988)
+bones/42/rotation = Quaternion(0.290889, -4.1273e-07, 4.03385e-06, 0.956757)
+bones/42/scale = Vector3(1, 0.999999, 1)
+bones/43/position = Vector3(0.0263009, 0.0452658, 0.085243)
+bones/44/position = Vector3(0.000860777, 0.00118226, 0.0245932)
+bones/44/rotation = Quaternion(0.218147, 1.20662e-06, -8.77947e-08, 0.975916)
+bones/45/rotation = Quaternion(0.195088, 8.40401e-07, -1.9865e-06, 0.980786)
+bones/45/scale = Vector3(1, 1, 1)
+bones/46/rotation = Quaternion(-2.08606e-06, 1.19995e-06, -0.453993, 0.891006)
+
+[node name="AnimationPlayer" parent="head/Pistol" index="1"]
+libraries = {
+&"": ExtResource("5_ur7pv")
+}
+
+[node name="gunshot" type="AudioStreamPlayer3D" parent="head/Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189829, 0.520838, -0.270734)
+stream = ExtResource("4_dqkch")
+
+[node name="player_state_machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("5_tuyoq")
+current_state = NodePath("idle_state")
+
+[node name="idle_state" type="Node" parent="player_state_machine"]
+script = ExtResource("6_tuyoq")
+
+[node name="walk_state" type="Node" parent="player_state_machine"]
+script = ExtResource("7_fjrip")
+
+[editable path="head/Camera3D/song_title_screen"]
+[editable path="head/Pistol"]

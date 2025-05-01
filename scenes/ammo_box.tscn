@@ -1,0 +1,54 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfxxgvmygwjha"]
+
+[ext_resource type="PackedScene" uid="uid://c4yd71nfnmupt" path="res://models/props/ammo_box.fbx" id="1_xcnyc"]
+[ext_resource type="Texture2D" uid="uid://dbn4aiopol0gi" path="res://textures/bullets/9mmbulletbox_box_BaseColor.png" id="2_jbrh7"]
+[ext_resource type="Texture2D" uid="uid://3yoovi27fd8e" path="res://textures/bullets/9mmbulletbox_box_Metallic.png" id="3_jbrh7"]
+[ext_resource type="Texture2D" uid="uid://gdm33ysu3a7l" path="res://textures/bullets/9mmbulletbox_box_Normal.png" id="4_oaxg3"]
+[ext_resource type="Texture2D" uid="uid://b7enrcxpobosv" path="res://textures/bullets/9mmbulletbox_box_Roughness.png" id="5_ishaw"]
+[ext_resource type="Texture2D" uid="uid://2ywlcocflb8b" path="res://textures/bullets/9mmbullet_bulletA_BaseColor.png" id="6_2wrfj"]
+[ext_resource type="Texture2D" uid="uid://bmn73p6q5un58" path="res://textures/bullets/9mmbullet_bulletA_Metallic.png" id="7_i4pue"]
+[ext_resource type="Texture2D" uid="uid://dr2iome00es6a" path="res://textures/bullets/9mmbullet_bulletA_Normal.png" id="8_lttc4"]
+[ext_resource type="Texture2D" uid="uid://ggffiog4us0x" path="res://textures/bullets/9mmbullet_bulletA_Roughness.png" id="9_j1a4e"]
+[ext_resource type="Texture2D" uid="uid://bpy5unisa08im" path="res://textures/bullets/9mmbullettray_tray_BaseColor.png" id="10_7b35q"]
+[ext_resource type="Texture2D" uid="uid://56f6p4kcynr" path="res://textures/bullets/9mmbullettray_tray_Metallic.png" id="11_xhtcv"]
+[ext_resource type="Texture2D" uid="uid://flbd7onlptfa" path="res://textures/bullets/9mmbullettray_tray_Normal.png" id="12_4tvby"]
+[ext_resource type="Texture2D" uid="uid://ehp46ly67sm3" path="res://textures/bullets/9mmbullettray_tray_Roughness.png" id="13_asext"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a3t3"]
+albedo_texture = ExtResource("2_jbrh7")
+metallic = 1.0
+metallic_texture = ExtResource("3_jbrh7")
+roughness_texture = ExtResource("5_ishaw")
+normal_enabled = true
+normal_texture = ExtResource("4_oaxg3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b35q"]
+albedo_texture = ExtResource("6_2wrfj")
+metallic = 1.0
+metallic_texture = ExtResource("7_i4pue")
+roughness_texture = ExtResource("9_j1a4e")
+normal_enabled = true
+normal_texture = ExtResource("8_lttc4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbcv4"]
+albedo_texture = ExtResource("10_7b35q")
+metallic = 1.0
+metallic_texture = ExtResource("11_xhtcv")
+roughness_texture = ExtResource("13_asext")
+normal_enabled = true
+normal_texture = ExtResource("12_4tvby")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ammo_box" parent="." instance=ExtResource("1_xcnyc")]
+
+[node name="box" parent="ammo_box" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2a3t3")
+
+[node name="bullet9mm_001" parent="ammo_box" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7b35q")
+
+[node name="tray" parent="ammo_box" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fbcv4")
+
+[editable path="ammo_box"]

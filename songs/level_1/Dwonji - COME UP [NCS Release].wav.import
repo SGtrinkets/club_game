@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b80rv5mh5ix1n"
+path="res://.godot/imported/Dwonji - COME UP [NCS Release].wav-d9e28b4805e63473a11fd3eca93bea66.sample"
+
+[deps]
+
+source_file="res://songs/level_1/Dwonji - COME UP [NCS Release].wav"
+dest_files=["res://.godot/imported/Dwonji - COME UP [NCS Release].wav-d9e28b4805e63473a11fd3eca93bea66.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

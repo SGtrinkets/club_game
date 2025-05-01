@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://butukwdv5kudj"]
+
+[resource]
+albedo_color = Color(0.354849, 0.000771632, 0.941347, 1)
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.19632, 0.260415, 0.749791, 1)
+emission_energy_multiplier = 10.77
+rim_enabled = true
+clearcoat_roughness = 0.28
+anisotropy = 1.0
+ao_enabled = true
+ao_light_affect = 1.0
+backlight = Color(0.813747, 0.485557, 0.393071, 1)
+refraction_scale = 1.0

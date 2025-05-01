@@ -1,0 +1,195 @@
+[gd_scene load_steps=10 format=3 uid="uid://dt2bjkx2yp3c0"]
+
+[ext_resource type="Script" uid="uid://ck4es2rlehpqi" path="res://scripts/level_1.gd" id="1_chtx1"]
+[ext_resource type="Material" uid="uid://c35d3dijqhy4y" path="res://materials/reflective_black_test.tres" id="1_fm3h1"]
+[ext_resource type="Texture2D" uid="uid://c5un8rl3j4oos" path="res://textures/noise/wall.tres" id="1_pcqdw"]
+[ext_resource type="PackedScene" uid="uid://dup1ex7vfupg1" path="res://scenes/player.tscn" id="2_w647x"]
+[ext_resource type="Material" uid="uid://butukwdv5kudj" path="res://materials/purple_glow.tres" id="4_ka55b"]
+[ext_resource type="PackedScene" uid="uid://cjpjevpjdis36" path="res://scenes/laser.tscn" id="5_ka55b"]
+[ext_resource type="AudioStream" uid="uid://dx3a7yrqlc3hn" path="res://songs/level_1/Culture Code ft. Brenton Mattheus - On My Own.wav" id="6_nb788"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chtx1"]
+albedo_color = Color(0.165656, 0.165656, 0.165656, 1)
+metallic = 0.2
+roughness = 0.05
+roughness_texture = ExtResource("1_pcqdw")
+
+[sub_resource type="Environment" id="Environment_eye2a"]
+background_mode = 1
+ambient_light_color = Color(0.617943, 0.673872, 0.607886, 1)
+ssr_enabled = true
+sdfgi_cascades = 3
+sdfgi_max_distance = 102.4
+sdfgi_y_scale = 0
+glow_enabled = true
+fog_enabled = true
+fog_light_energy = 0.16
+
+[node name="level_1" type="Node3D"]
+script = ExtResource("1_chtx1")
+
+[node name="club" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="club"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.25813)
+use_collision = true
+size = Vector3(30, 1, 40)
+material = SubResource("StandardMaterial3D_chtx1")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="club"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7724, 7.25813)
+use_collision = true
+size = Vector3(30, 1, 40)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="club"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.502, 5.22516, 7.258)
+use_collision = true
+size = Vector3(1, 11.4503, 40)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="club"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.502, 5.22516, 7.258)
+use_collision = true
+size = Vector3(1, 11.4503, 40)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="club"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4607, 5.22516, 7.258)
+use_collision = true
+size = Vector3(1, 11.4503, 40)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0579042, 5.22516, 26.6754)
+use_collision = true
+size = Vector3(1, 11.4503, 40)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0579042, 8.30649, -13.374)
+use_collision = true
+size = Vector3(1, 5.28766, 40)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9202, 2.88142, -13.374)
+use_collision = true
+size = Vector3(1, 5.54263, 16.5162)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1974, 2.88872, -13.374)
+use_collision = true
+size = Vector3(1, 5.55723, 16.8967)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0.0636344, -0.321084, -36.7332)
+use_collision = true
+size = Vector3(1, 47.9875, 5.47305)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="club"]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0.0636344, 5.31152, -36.8019)
+use_collision = true
+size = Vector3(0.635742, 47.8502, 5.47305)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="club"]
+transform = Transform3D(-1, -4.37114e-08, -8.74228e-08, 8.74228e-08, 1.91069e-15, -1, 4.37114e-08, -1, 1.91069e-15, -3.16557, 2.75391, -37.5314)
+use_collision = true
+size = Vector3(1, 47.9875, 5.47305)
+material = ExtResource("1_fm3h1")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="club"]
+transform = Transform3D(-1, -4.37114e-08, -8.74228e-08, 8.74228e-08, 1.91069e-15, -1, 4.37114e-08, -1, 1.91069e-15, 3.25552, 2.75391, -37.5314)
+use_collision = true
+size = Vector3(1, 47.9875, 5.47305)
+material = ExtResource("1_fm3h1")
+
+[node name="lasers" type="Node3D" parent="."]
+
+[node name="laser" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14149, 6.2595, -3.05873)
+
+[node name="laser2" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0602, 6.2595, -4.80719)
+
+[node name="laser3" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(0.796962, 0.604029, 0, -0.604029, 0.796962, 0, 0, 0, 1, 0.221099, 4.26762, -15.9701)
+
+[node name="laser10" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(0.848473, -0.529238, 0, 0.529238, 0.848473, 0, 0, 0, 1, 0.221099, 4.26762, -19.8849)
+
+[node name="laser11" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.505823, 0.862637, 0, -0.862637, -0.505823, 0, 0, 0, 1, 0.221099, 2.59643, -25.0321)
+
+[node name="laser12" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(0.540211, 0.84153, 0, -0.84153, 0.540211, 0, 0, 0, 1, 0.221099, 2.59643, -37.6051)
+
+[node name="laser4" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.353752, 0.935339, 0, -0.935339, -0.353752, 0, 0, 0, 1, 0.221099, 4.26762, -22.8506)
+
+[node name="laser5" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.980768, -0.195176, 0, 0.195176, -0.980768, 0, 0, 0, 1, 0.221099, 4.26762, -28.253)
+
+[node name="laser6" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.158193, 0.987408, 0, -0.987408, -0.158193, 0, 0, 0, 1, 0.221099, 4.26762, -39.5296)
+
+[node name="laser7" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.771391, 0.636361, 0, -0.636361, -0.771391, 0, 0, 0, 1, 0.221099, 3.11533, -33.3472)
+
+[node name="laser8" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(-0.771391, 0.636361, 0, -0.636361, -0.771391, 0, 0, 0, 1, 0.221099, 3.11533, -43.421)
+
+[node name="laser9" parent="lasers" instance=ExtResource("5_ka55b")]
+transform = Transform3D(0.838937, 0.544229, 0, -0.544229, 0.838937, 0, 0, 0, 1, 0.221099, 3.11533, -45.5975)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eye2a")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.207641, 9.70658, -12.3043)
+light_energy = 16.0
+spot_range = 9.74294
+spot_attenuation = -1.22
+spot_angle = 36.2075
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.207641, 9.70658, 1.39632)
+light_color = Color(0.660207, 0.418687, 0.992553, 1)
+light_energy = 0.075
+spot_range = 16.9389
+spot_attenuation = -2.17
+spot_angle = 71.7188
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.22434, 5.31509)
+visible = false
+light_energy = 3.232
+light_indirect_energy = 6.98
+omni_range = 23.335
+omni_attenuation = -0.072
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.259428, 6.94743, -12.7436)
+inner_radius = 0.9
+sides = 32
+ring_sides = 32
+material = ExtResource("4_ka55b")
+
+[node name="speaker_sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66716, 0)
+stream = ExtResource("6_nb788")
+
+[node name="player" parent="." instance=ExtResource("2_w647x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32935, 0)
+
+[node name="Skeleton3D" parent="player/head/Pistol" index="0"]
+transform = Transform3D(-1, 6.18173e-08, 6.18173e-08, 0, 0.707107, -0.707107, -8.74228e-08, -0.707107, -0.707107, 0, 0, 0.375)
+bones/2/position = Vector3(-0.0538376, 0.105343, -0.231776)
+bones/27/position = Vector3(0.118042, -0.0240156, -0.0350822)
+
+[editable path="player"]
+[editable path="player/head/Camera3D/song_title_screen"]
+[editable path="player/head/Pistol"]

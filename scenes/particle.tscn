@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1tt7ueqlrxj2"]
+
+[ext_resource type="Texture2D" uid="uid://dljxfyvqqd63l" path="res://icon.svg" id="1_jw3tu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(274, 7)
+amount = 403
+texture = ExtResource("1_jw3tu")
+preprocess = 2.42
+emission_shape = 3
+emission_rect_extents = Vector2(100, 5)
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color = Color(0.0788236, 0.578629, 0.487138, 1)
