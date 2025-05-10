@@ -12,10 +12,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !spotlight_anim.is_playing():
-		spotlight_anim.play("rotate_static")
+		spotlight_anim.play("rotate_flash")
 		
 
 func _on_flash_timer_timeout() -> void:
-	#light.visible = !light.visible
-	pass
+	light.visible = !light.visible
+	#pass
 	

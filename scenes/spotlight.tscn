@@ -92,8 +92,8 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_g60t2"]
-resource_name = "rotate_static"
+[sub_resource type="Animation" id="Animation_jvbm6"]
+resource_name = "rotate_flash"
 length = 6.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -163,8 +163,8 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.5, 3, 6)
 }
 
-[sub_resource type="Animation" id="Animation_jvbm6"]
-resource_name = "rotate_flash"
+[sub_resource type="Animation" id="Animation_g60t2"]
+resource_name = "rotate_static"
 length = 6.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -264,7 +264,7 @@ libraries = {
 }
 
 [node name="flash_timer" type="Timer" parent="." index="2"]
-wait_time = 0.05
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="flash_timer" to="." method="_on_flash_timer_timeout"]
