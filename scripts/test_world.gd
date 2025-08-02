@@ -7,7 +7,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	TranslationServer.set_locale("en")
+	TranslationServer.set_locale("es")
 	GlobalGameState.player = $player
 	#$Camera3D/Control/CenterContainer/subtitles.text = tr(subtitle_key)
 

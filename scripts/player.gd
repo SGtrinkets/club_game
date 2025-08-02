@@ -6,7 +6,6 @@ extends CharacterBody3D
 @export var jump = 4.5
 @export var gun_equipped = false
 
-
 @export var mouse_sensitivity = 0.4
 var lerp_speed = 10.0
 
